@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Header } from "@/components/ui/header"
 import { MetricCard } from "@/components/ui/metric-card"
 import { RevenueChart, UserGrowthChart, ChannelDistributionChart } from "@/components/ui/charts"
@@ -16,6 +16,7 @@ import {
 
 export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(true)
+  const [lastUpdated, setLastUpdated] = useState(new Date())
 
   useEffect(() => {
     // Simulate loading time
@@ -24,6 +25,15 @@ export default function Dashboard() {
     }, 1500)
 
     return () => clearTimeout(timer)
+  }, [])
+
+  // Simulate real-time updates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLastUpdated(new Date())
+    }, 30000) // Update every 30 seconds
+
+    return () => clearInterval(interval)
   }, [])
 
   if (isLoading) {
