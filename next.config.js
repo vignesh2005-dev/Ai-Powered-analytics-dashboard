@@ -5,6 +5,7 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: false,
     swcTraceProfiling: false,
+    runtime: undefined,
   },
   compiler: {
     // Disable all SWC compiler features
@@ -38,11 +39,6 @@ const nextConfig = {
     })
     
     return config
-  },
-  // Disable edge runtime which uses SWC
-  experimental: {
-    ...nextConfig.experimental,
-    runtime: undefined,
   },
 }
 
