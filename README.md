@@ -1,4 +1,4 @@
-# ADmyBRAND Insights - AI-Powered Analytics Dashboard
+# VK - AI-Powered Analytics Dashboard
 
 A modern, visually stunning analytics dashboard for digital marketing agencies built with Next.js 14, TypeScript, and cutting-edge UI libraries.
 
